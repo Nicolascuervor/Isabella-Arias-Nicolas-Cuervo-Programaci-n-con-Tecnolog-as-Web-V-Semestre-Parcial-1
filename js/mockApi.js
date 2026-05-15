@@ -1,94 +1,94 @@
 const mockProducts = [
     {
         id: 1,
-        name: "Enterprise CRM Suite (Lote 50 Licencias)",
-        price: 999.99,
-        description: "Gestión integral de clientes. Ideal para potenciar tu equipo de ventas al por mayor.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Effaclar Gel Purificante (Lote 100 uds)",
+        price: 1850.00,
+        description: "Gel limpiador espumoso para pieles grasas y sensibles. Elimina impurezas y exceso de sebo.",
+        image: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 2,
-        name: "Cloud Storage Business (100TB)",
-        price: 499.99,
-        description: "Almacenamiento seguro, distribuido y redundante para toda la organización.",
-        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Anthelios UVmune 400 (Lote 50 uds)",
+        price: 1200.00,
+        description: "Protector solar fluido invisible SPF50+. Alta protección contra rayos UVA ultra largos.",
+        image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 3,
-        name: "ERP Global Scale (Lote 100 Licencias)",
-        price: 1499.99,
-        description: "Planificación de recursos empresariales en la nube. Automatización total.",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Toleriane Dermallergo (Lote 200 uds)",
+        price: 4500.00,
+        description: "Crema hidratante diaria para pieles alérgicas o ultra sensibles. Restaura la barrera cutánea.",
+        image: "https://images.unsplash.com/photo-1608248593842-8021c6a8b51d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 4,
-        name: "HR Management System (Lote 500 Empleados)",
-        price: 850.00,
-        description: "Plataforma SaaS para gestionar nóminas, vacaciones y evaluación de talento humano.",
-        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Cicaplast Baume B5+ (Lote 100 uds)",
+        price: 1500.00,
+        description: "Bálsamo reparador calmante multi-usos para irritaciones de la piel.",
+        image: "https://images.unsplash.com/photo-1615397323758-132d72b53bd4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 5,
-        name: "Marketing Automation Pro (Licencia Ilimitada)",
-        price: 1200.50,
-        description: "Automatiza campañas de correo, redes sociales y métricas en tiempo real.",
-        image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Hyalu B5 Sérum (Lote 50 uds)",
+        price: 2100.00,
+        description: "Sérum anti-arrugas reparador rellenador con ácido hialurónico puro y vitamina B5.",
+        image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 6,
-        name: "Cybersecurity Analytics Engine (SaaS)",
-        price: 2500.00,
-        description: "Monitoreo de red con inteligencia artificial y prevención de intrusiones en la nube.",
-        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Pure Vitamin C10 Sérum (Lote 50 uds)",
+        price: 2250.00,
+        description: "Sérum renovador antioxidante que revela la luminosidad de la piel sensible.",
+        image: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 7,
-        name: "B2B eCommerce API (Plan Transaccional)",
-        price: 799.00,
-        description: "Headless commerce APIs listas para integrar en tu propio frontend B2B.",
-        image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Retinol B3 Sérum (Lote 50 uds)",
+        price: 2400.00,
+        description: "Sérum dermatológico anti-arrugas profundas regenerador y unificador.",
+        image: "https://images.unsplash.com/photo-1570194065650-d99fb4b8ceb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 8,
-        name: "AI Customer Support Bot (1M Peticiones/mes)",
-        price: 650.00,
-        description: "Soporte automatizado de primer nivel integrado con tus canales de comunicación.",
-        image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Lipikar Baume AP+M (Lote 100 uds)",
+        price: 2800.00,
+        description: "Bálsamo relipidizante triple acción reparadora. Anti-picor y anti-reaparición.",
+        image: "https://images.unsplash.com/photo-1601049541289-9b1b7bfb578c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 9,
-        name: "Supply Chain Tracker (Global Edition)",
-        price: 1800.00,
-        description: "Rastreo de envíos en tiempo real mediante integraciones con cientos de transportistas.",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Micellar Water Ultra (Lote 200 uds)",
+        price: 3200.00,
+        description: "Agua micelar desmaquillante purificante formulada específicamente para pieles sensibles.",
+        image: "https://images.unsplash.com/photo-1556228720-1c2f1f31f90b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 10,
-        name: "Financial Accounting Cloud (Multi-moneda)",
-        price: 1150.00,
-        description: "Contabilidad, facturación y reportes financieros diseñados para operaciones globales.",
-        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Rosaliac AR Intense (Lote 50 uds)",
+        price: 1650.00,
+        description: "Concentrado intensivo para rojeces localizadas. Eficacia anti-reaparición.",
+        image: "https://images.unsplash.com/photo-1556228578-8c89e6adf883?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 11,
-        name: "Team Collaboration Hub (Lote 200 Usuarios)",
-        price: 399.99,
-        description: "Videoconferencias, chat empresarial y gestión de tareas unificados.",
-        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Serozinc Spray (Lote 100 uds)",
+        price: 1100.00,
+        description: "Solución de sulfato de zinc purificante y calmante para pieles grasas con imperfecciones.",
+        image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 12,
-        name: "Data Warehousing Solution (Peta-scale)",
-        price: 3500.00,
-        description: "Bodega de datos en la nube preparada para Big Data y análisis predictivos.",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Pigmentclar Sérum (Lote 50 uds)",
+        price: 2300.00,
+        description: "Sérum intensivo corrector anti-manchas con eficacia prolongada.",
+        image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 13,
-        name: "ITSM Ticketing System (Enterprise)",
-        price: 890.00,
-        description: "Mesa de ayuda y gestión de incidentes bajo el marco ITIL.",
-        image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Redermic Retinol Ojos (Lote 50 uds)",
+        price: 1900.00,
+        description: "Concentrado dermatológico anti-edad intensivo para el contorno de los ojos.",
+        image: "https://images.unsplash.com/photo-1571781564998-05b63ce32e18?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
 ];
 

@@ -1,7 +1,7 @@
-# Nexus Cloud - Landing Page B2B Premium
+# La Roche-Posay B2B - Skincare Corporativo
 
 ## Descripción Breve
-Nexus Cloud es una plataforma web diseñada para promocionar y vender soluciones de Software as a Service (SaaS) al por mayor. El proyecto se desarrolló utilizando HTML5, CSS3 nativo (usando variables CSS y Flexbox/Grid para un diseño responsivo) y JavaScript (Vanilla) para la lógica de negocio y simulaciones de API, cumpliendo con los estándares de diseño premium y experiencia de usuario (UI/UX) enfocados al sector B2B.
+La Roche-Posay B2B es una plataforma web diseñada para el abastecimiento al por mayor de productos dermatológicos corporativos. El proyecto se desarrolló utilizando HTML5, CSS3 nativo (usando variables CSS y Flexbox/Grid para un diseño responsivo) y JavaScript (Vanilla) para la lógica de negocio y simulaciones de API, cumpliendo con los estándares de diseño y experiencia de usuario (UI/UX) con una temática clínica y corporativa en tonos cremas y azules.
 
 Este proyecto es parte del "Parcial 1" de Programación con Tecnologías Web.
 
@@ -42,7 +42,7 @@ Dado que el proyecto utiliza Vanilla HTML/CSS/JS con uso de módulos ES6 (`type=
 El archivo `js/mockApi.js` expone métodos que simulan una API real con un retraso (latencia) y probabilidad de falla. Todos los errores simulados lanzan en consola un código HTTP equivalente a un `500 Internal Server Error`.
 
 ### 1. `getProducts()`
-Obtiene la lista de productos (planes de software SaaS) disponibles en el catálogo.
+Obtiene la lista de productos (lotes dermatológicos) disponibles en el catálogo.
 - **Equivalente HTTP**: `GET /api/products`
 - **Parámetros**: Ninguno.
 - **Retorno en Éxito**: Un arreglo de objetos, donde cada objeto representa un plan con sus detalles (`id`, `name`, `price`, `description`, `image`).
