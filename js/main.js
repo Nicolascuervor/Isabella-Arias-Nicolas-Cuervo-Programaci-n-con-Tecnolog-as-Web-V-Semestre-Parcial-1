@@ -34,7 +34,7 @@ async function loadProducts() {
             <div class="product-card__body">
               <h3 id="p-${p.id}" class="product-card__name">${p.name}</h3>
               <p class="product-card__desc">${p.description}</p>
-              <span class="product-card__cta">Explorar línea</span>
+              
             </div>
           </article>
         `
