@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aether Chronos - El reloj inteligente premium del futuro, disponible ahora.">
-    <title>Aether Chronos | El Reloj Inteligente Definitivo</title>
+    <meta name="description" content="Nexus Cloud - Tu plataforma B2B para compra al por mayor de Software as a Service (SaaS).">
+    <title>Nexus Cloud | Soluciones SaaS al Por Mayor</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
 
     <header>
         <nav>
-            <div class="logo">AETHER CHRONOS</div>
+            <div class="logo">NEXUS CLOUD</div>
             <a href="#order" class="btn btn-primary">Comprar Ahora</a>
         </nav>
     </header>
@@ -26,24 +26,24 @@
     <main>
         <!-- Sección 1: Presentación (Landing) -->
         <section id="hero">
-            <h1>Domina tu Tiempo</h1>
-            <p class="hero-description">Descubre Aether Chronos, una fusión perfecta entre relojería clásica de lujo y tecnología biométrica avanzada. Monitorea tu vida con estilo.</p>
-            <a href="#catalog" class="btn btn-primary">Ver Modelos</a>
+            <h1>Escala tu Operación</h1>
+            <p class="hero-description">Plataforma integral de compra al por mayor de Software as a Service (SaaS). Proveemos licencias empresariales de CRM, ERP y Cloud con soporte B2B especializado.</p>
+            <a href="#catalog" class="btn btn-primary">Ver Catálogo SaaS</a>
         </section>
 
         <!-- Sección 2: Catálogo -->
         <section id="catalog">
-            <h2>Nuestra Colección</h2>
+            <h2>Catálogo de Software (Lotes)</h2>
             
             <div id="catalog-loading" class="empty-state">
                 <span class="spinner"></span>
-                <p>Cargando modelos premium...</p>
+                <p>Cargando planes de software...</p>
             </div>
 
             <div id="catalog-error" class="alert alert-error hidden"></div>
             
             <div id="catalog-empty" class="empty-state hidden">
-                <p>Actualmente no hay modelos disponibles en inventario. Por favor, regresa más tarde.</p>
+                <p>Actualmente no hay planes SaaS disponibles. Por favor, regresa más tarde.</p>
             </div>
 
             <div id="catalog-container" class="products-grid">
@@ -60,12 +60,12 @@
                 <div id="form-success" class="alert alert-success hidden"></div>
 
                 <div class="form-group">
-                    <label for="name">Nombre Completo</label>
+                    <label for="name">Nombre de la Empresa / Representante</label>
                     <input type="text" id="name" name="name" required minlength="3">
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Correo Electrónico</label>
+                    <label for="email">Correo Electrónico Corporativo</label>
                     <input type="email" id="email" name="email" required>
                 </div>
 
@@ -73,16 +73,21 @@
                     <label for="phone">Teléfono de Contacto</label>
                     <input type="tel" id="phone" name="phone" required pattern="[0-9]{7,15}" title="Solo números, entre 7 y 15 dígitos">
                 </div>
+
+                <div class="form-group">
+                    <label for="licenses">Número de Licencias Adicionales Requeridas</label>
+                    <input type="number" id="licenses" name="licenses" required min="0" value="0">
+                </div>
                 
                 <div class="form-group">
-                    <label for="date">Fecha de Nacimiento (Para garantía)</label>
+                    <label for="date">Fecha Esperada de Despliegue</label>
                     <input type="date" id="date" name="date" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="product">Modelo Seleccionado</label>
+                    <label for="product">Plan SaaS Seleccionado</label>
                     <select id="product" name="product" required>
-                        <option value="" disabled selected>-- Elige tu modelo --</option>
+                        <option value="" disabled selected>-- Elige el plan mayorista --</option>
                         <!-- Opciones inyectadas por JS -->
                     </select>
                 </div>
@@ -96,7 +101,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Aether Chronos. Todos los derechos reservados. Proyecto Académico.</p>
+        <p>&copy; 2026 Nexus Cloud SaaS B2B. Todos los derechos reservados. Proyecto Académico.</p>
     </footer>
 
     <!-- Modal de confirmación -->

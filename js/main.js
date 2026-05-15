@@ -36,7 +36,7 @@ async function initCatalog() {
                     <h3>${product.name}</h3>
                     <p class="product-price">$${product.price.toFixed(2)} USD</p>
                     <p class="product-desc">${product.description}</p>
-                    <button class="btn btn-primary" onclick="selectProduct(${product.id})">Seleccionar Modelo</button>
+                    <button class="btn btn-primary" onclick="selectProduct(${product.id})">Seleccionar Plan</button>
                 </div>
             `;
             catalogContainer.appendChild(card);
@@ -89,7 +89,7 @@ function initForm() {
 
         if (!orderData.productId) {
             formError.classList.remove('hidden');
-            formError.textContent = "Por favor selecciona un modelo antes de continuar.";
+            formError.textContent = "Por favor selecciona un plan antes de continuar.";
             return;
         }
 

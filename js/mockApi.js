@@ -1,24 +1,24 @@
 const mockProducts = [
     {
         id: 1,
-        name: "Aether Chronos - Obsidian Black",
-        price: 299.99,
-        description: "El equilibrio perfecto entre elegancia oscura y rendimiento extremo.",
-        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Enterprise CRM Suite (Lote 50 Licencias)",
+        price: 999.99,
+        description: "Gestión integral de clientes. Ideal para potenciar tu equipo de ventas al por mayor.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 2,
-        name: "Aether Chronos - Lunar Silver",
-        price: 319.99,
-        description: "Brillo metálico refinado para cualquier ocasión.",
-        image: "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "Cloud Storage Business (100TB)",
+        price: 499.99,
+        description: "Almacenamiento seguro, distribuido y redundante para toda la organización.",
+        image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     },
     {
         id: 3,
-        name: "Aether Chronos - Rose Gold",
-        price: 349.99,
-        description: "Un toque de lujo y sofisticación inigualable.",
-        image: "https://images.unsplash.com/photo-1617043786394-f977fa12eddf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        name: "ERP Global Scale (Lote 100 Licencias)",
+        price: 1499.99,
+        description: "Planificación de recursos empresariales en la nube. Automatización total.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
     }
 ];
 
