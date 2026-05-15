@@ -1,3 +1,11 @@
+/**
+ * ui.js
+ * UI helpers: toasts, reveal-on-scroll, accordion, mobile menu,
+ * sticky header state, and animated stat counters.
+ * Each helper is independently exported (Separation of Concerns).
+ */
+
+/* ---------- Toast notifications ---------- */
 export function toast(message, variant = 'info', timeout = 4200) {
   const stack = document.getElementById('toast-stack');
   if (!stack) return;
@@ -14,7 +22,7 @@ export function toast(message, variant = 'info', timeout = 4200) {
   }, timeout);
 }
 
-
+/* ---------- Reveal on scroll ---------- */
 export function initReveal() {
   const items = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
