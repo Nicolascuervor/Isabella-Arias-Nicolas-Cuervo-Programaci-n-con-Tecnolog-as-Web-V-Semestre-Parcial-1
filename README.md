@@ -1,65 +1,188 @@
-# La Roche-Posay B2B - Skincare Corporativo
+# La Roche-Posay — Landing Page Premium
 
-## Descripción Breve
-La Roche-Posay B2B es una plataforma web diseñada para el abastecimiento al por mayor de productos dermatológicos corporativos. El proyecto se desarrolló utilizando HTML5, CSS3 nativo (usando variables CSS y Flexbox/Grid para un diseño responsivo) y JavaScript (Vanilla) para la lógica de negocio y simulaciones de API, cumpliendo con los estándares de diseño y experiencia de usuario (UI/UX) con una temática clínica y corporativa en tonos cremas y azules.
+Landing page académica que posiciona a **La Roche-Posay** como referente mundial en dermatología respaldada por la ciencia. Diseño minimalista premium inspirado en Apple, Aesop y Stripe, con paleta corporativa azul, animaciones sutiles y arquitectura limpia.
 
-Este proyecto es parte del "Parcial 1" de Programación con Tecnologías Web.
-
-## Características Principales
-- **Diseño Premium**: Paleta de colores "Dark Mode", fuentes modernas y efectos "Glassmorphism" y animaciones.
-- **Responsividad**: Completamente funcional en escritorio y dispositivos móviles sin elementos rotos o desbordados.
-- **Semántica HTML5**: Uso correcto de etiquetas semánticas (`header`, `nav`, `main`, `section`, `article`, `footer`).
-- **Usabilidad (UX)**:
-  - Textos descriptivos en botones (e.g. "Procesar Pago Seguro" en vez de "Enviar").
-  - Etiquetas (`label`) correctas asociadas a campos de entrada con tipos específicos (`email`, `tel`, `date`, `text`).
-  - Estados de carga (Spinners y botones deshabilitados).
-  - Manejo y muestra de errores de la API.
-  - Confirmación explícita para acciones irreversibles (modal de confirmación antes de cancelar pedido).
-  - Estados de vacío explícitos ("Empty states").
-
-## Cómo Correrlo Localmente
-Dado que el proyecto utiliza Vanilla HTML/CSS/JS con uso de módulos ES6 (`type="module"`), debe ser corrido en un servidor local (no se puede simplemente abrir el archivo `index.html` en el navegador con el protocolo `file://` debido a restricciones de CORS con los módulos).
-
-**Opción 1: Usando una extensión de Visual Studio Code**
-1. Abre el proyecto en VS Code.
-2. Instala la extensión **Live Server**.
-3. Haz clic derecho sobre `index.html` y selecciona **"Open with Live Server"**.
-
-**Opción 2: Usando Node.js (http-server / serve)**
-1. Abre una terminal en la raíz del proyecto.
-2. Ejecuta `npx serve .` o `npx http-server -c-1` (se requiere tener Node.js instalado).
-3. Abre el enlace local proporcionado (ej. `http://localhost:3000`).
-
-**Opción 3: Usando Python**
-1. Abre una terminal en la raíz del proyecto.
-2. Ejecuta `python -m http.server 8000`.
-3. Navega a `http://localhost:8000` en tu navegador.
+> Proyecto académico · sin uso comercial · vanilla HTML5 + CSS3 + JavaScript ES6+ (sin frameworks).
 
 ---
 
-## Documentación de la API Simulada (`mockApi.js`)
+## ✨ Características
 
-El archivo `js/mockApi.js` expone métodos que simulan una API real con un retraso (latencia) y probabilidad de falla. Todos los errores simulados lanzan en consola un código HTTP equivalente a un `500 Internal Server Error`.
+- **Diseño premium** ultra minimalista, mobile-first y totalmente responsive (375 / 768 / 1024 / 1440 px).
+- **HTML5 semántico** con jerarquía correcta (`header`, `nav`, `main`, `section`, `article`, `form`, `footer`) y un único `<h1>`.
+- **Accesibilidad WCAG 2.1 AA**: navegación por teclado, `aria-*`, focus visible, contraste validado, `skip-link`.
+- **Microinteracciones**: smooth scrolling, fade-in on scroll, hover, skeleton loaders, toasts.
+- **API simulada** (`mockApi.js`) con `Promise`, delay de 800 ms y simulación de error 500.
+- **Validación robusta** del formulario (campo a campo, en blur y al enviar).
+- **SEO**: `<title>`, meta description, Open Graph, favicon SVG.
+- **Clean Code**: separación de responsabilidades (`mockApi`, `validation`, `ui`, `main`), DRY, KISS.
 
-### 1. `getProducts()`
-Obtiene la lista de productos (lotes dermatológicos) disponibles en el catálogo.
-- **Equivalente HTTP**: `GET /api/products`
-- **Parámetros**: Ninguno.
-- **Retorno en Éxito**: Un arreglo de objetos, donde cada objeto representa un plan con sus detalles (`id`, `name`, `price`, `description`, `image`).
-- **Retorno en Error**: Lanza un `Error` si falla (10% de probabilidad programada). Además, se registra en consola `500 Internal Server Error: Error al obtener los productos de la base de datos.`
+---
 
-### 2. `submitOrder(orderData)`
-Procesa y registra una orden de compra generada por el usuario.
-- **Equivalente HTTP**: `POST /api/orders`
-- **Parámetros**: `orderData` (Object). Debe contener:
-  - `name`: String.
-  - `email`: String.
-  - `phone`: String.
-  - `date`: String.
-  - `productId`: String o Number.
-- **Retorno en Éxito**: Un objeto de confirmación con los campos:
-  - `success`: Boolean (`true`)
-  - `orderId`: String (ID de orden generado aleatoriamente)
-  - `message`: String
-  - `estimatedDelivery`: String
-- **Retorno en Error**: Lanza un `Error` en caso de fallar (15% de probabilidad programada). También puede fallar por validación si faltan datos esenciales. Se registra en consola `500 Internal Server Error: Fallo en el procesador de pagos.` (o 400 en caso de faltar datos).
+## 🛠 Tecnologías
+
+| Capa | Tecnología |
+|------|------------|
+| Marcado | HTML5 semántico |
+| Estilos | CSS3 moderno (variables, Grid, Flexbox, `clamp()`, `oklch`-friendly) |
+| Lógica | JavaScript ES6+ (módulos nativos `import/export`) |
+| Tipografía | Inter (Google Fonts) + fallback SF Pro Display / system sans |
+| Iconografía | SVG inline minimalista |
+
+Sin frameworks, sin build step. Se ejecuta directamente en el navegador.
+
+---
+
+## 📁 Estructura del proyecto
+
+```
+/src
+├── index.html
+├── /css
+│   ├── variables.css     # Tokens de diseño (color, espaciado, tipografía)
+│   ├── reset.css         # Reset moderno
+│   ├── styles.css        # Estilos de componentes y secciones
+│   └── responsive.css    # Breakpoints y media queries
+├── /js
+│   ├── main.js           # Punto de entrada — orquesta la página
+│   ├── ui.js             # Helpers UI (toasts, reveal, accordion, contadores)
+│   ├── validation.js     # Validadores puros (testables)
+│   └── mockApi.js        # API simulada (GET productos / POST consultas)
+└── /assets
+    ├── /images           # Hero + tarjetas de producto (SVG)
+    └── /icons            # Favicon
+README.md
+```
+
+> En este repositorio los archivos se sirven desde `public/lrp/` para integrarse al preview, pero la estructura interna es idéntica.
+
+---
+
+## 🚀 Cómo ejecutar localmente
+
+Cualquier servidor estático funciona. Tres opciones:
+
+```bash
+# Opción 1 — Python
+cd public/lrp
+python3 -m http.server 8080
+# → http://localhost:8080
+```
+
+```bash
+# Opción 2 — Node (npx)
+npx serve public/lrp
+```
+
+```bash
+# Opción 3 — VSCode
+# Instala "Live Server" y abre public/lrp/index.html
+```
+
+> Importante: usa un servidor (no abrir el HTML con `file://`) para que los **módulos ES6** (`import`) funcionen correctamente.
+
+---
+
+## 🔌 Documentación de `mockApi.js`
+
+Capa de simulación de API REST. Toda función:
+
+- Retorna una `Promise`.
+- Espera **800 ms** (simula latencia de red).
+- Tiene una probabilidad configurable de fallar (`FAILURE_RATE = 0.08`).
+- En caso de error, registra `console.log("500 Internal Server Error")` y rechaza la promesa con un `Error` descriptivo.
+
+### `getBrandProducts()`
+
+Simula `GET /api/products`.
+
+**Respuesta exitosa** — `Promise<Product[]>`:
+
+```js
+[
+  {
+    id: 'effaclar',
+    name: 'Effaclar',
+    description: 'Rutina dermatológica para piel grasa con tendencia acneica.',
+    image: './assets/images/effaclar.svg'
+  },
+  // ...Anthelios, Cicaplast, Lipikar
+]
+```
+
+**Error** — `Error('No fue posible cargar los productos. Intenta nuevamente.')`
+
+**Ejemplo de uso:**
+
+```js
+import { getBrandProducts } from './mockApi.js';
+
+try {
+  const products = await getBrandProducts();
+  render(products);
+} catch (err) {
+  showToast(err.message, 'error');
+}
+```
+
+### `submitSkinConsultation(payload)`
+
+Simula `POST /api/consultations`.
+
+**Payload esperado:**
+
+```ts
+{
+  fullName: string;
+  email: string;
+  phone: string;
+  skinType: 'seca' | 'mixta' | 'grasa' | 'sensible' | 'madura';
+  need: string;
+}
+```
+
+**Respuesta exitosa** — `Promise<{ ok: true, id: string, receivedAt: string, payload }>`
+
+**Error** — `Error('El servidor no pudo procesar tu solicitud. Inténtalo de nuevo.')`
+
+**Ejemplo:**
+
+```js
+import { submitSkinConsultation } from './mockApi.js';
+
+const result = await submitSkinConsultation({
+  fullName: 'María Fernández',
+  email: 'maria@correo.com',
+  phone: '+57 300 000 0000',
+  skinType: 'mixta',
+  need: 'Manchas y protección solar diaria.'
+});
+console.log(result.id); // → cons_lq8x...
+```
+
+---
+
+## ♿ Accesibilidad
+
+- Skip-link al contenido principal.
+- Roles ARIA y `aria-live` para toasts/estado del formulario.
+- Estados `aria-invalid` y mensajes de error asociados visualmente.
+- Soporte de `prefers-reduced-motion`.
+- Todos los inputs poseen `<label>` visible y asociado por `for`.
+
+---
+
+## 🎯 Performance
+
+- Sin frameworks ni dependencias runtime → bundle ~0 KB JS de terceros.
+- Imágenes vectoriales (SVG) → escalables y livianas.
+- Fonts con `preconnect` + `display=swap`.
+- CSS modular con variables nativas, sin preprocesadores.
+
+Objetivo Lighthouse: **>95** en Performance, Accessibility, Best Practices y SEO.
+
+---
+
+## 📄 Licencia
+
+Proyecto académico desarrollado con fines educativos. La marca **La Roche-Posay** y sus líneas (Effaclar, Anthelios, Cicaplast, Lipikar) pertenecen a sus respectivos titulares.

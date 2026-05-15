@@ -1,0 +1,30 @@
+/* Mobile First — base styles target 375px */
+@media (max-width: 1024px) {
+  .nav { display: none; }
+  .nav-toggle { display: block; }
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero__media { order: -1; aspect-ratio: 4 / 3; }
+  .consult__grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+  .stats { grid-template-columns: 1fr; }
+  .form { grid-template-columns: 1fr; }
+  .hero__meta { gap: var(--space-4); }
+  .footer__bottom { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .footer__grid { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr; }
+  .btn { width: 100%; }
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .brand__sub { display: none; }
+}
+
+@media (min-width: 1440px) {
+  :root { --container: 1280px; }
+}

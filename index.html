@@ -1,120 +1,322 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Plataforma de abastecimiento B2B de productos dermatológicos La Roche-Posay.">
-    <title>La Roche-Posay B2B | Skincare Corporativo</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="La Roche-Posay — Dermatología respaldada por la ciencia. Soluciones recomendadas por dermatólogos en todo el mundo." />
+  <meta name="theme-color" content="#009FE3" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="La Roche-Posay — Dermatología respaldada por la ciencia" />
+  <meta property="og:description" content="Soluciones dermatológicas recomendadas por más de 90.000 dermatólogos en todo el mundo." />
+  <meta property="og:image" content="./assets/images/hero.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/variables.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
+
+  <title>La Roche-Posay | Dermatología respaldada por la ciencia</title>
 </head>
 <body>
+  <a href="#main" class="skip-link">Saltar al contenido principal</a>
 
-    <header>
-        <nav>
-            <div class="logo">LA ROCHE-POSAY B2B</div>
-            <a href="#order" class="btn btn-primary">Comprar Ahora</a>
-        </nav>
-    </header>
+  <header class="site-header" role="banner">
+    <div class="container header__inner">
+      <a href="#" class="brand" aria-label="La Roche-Posay inicio">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">LA ROCHE-POSAY</span>
+        <span class="brand__sub">LABORATOIRE DERMATOLOGIQUE</span>
+      </a>
 
-    <main>
-        <!-- Sección 1: Presentación  -->
-        <section id="hero">
-            <h1>Cuidado Dermatológico Corporativo</h1>
-            <p class="hero-description">Abastecimiento empresarial de productos La Roche-Posay para clínicas, farmacias y corporativos. Fórmulas respaldadas por dermatólogos en todo el mundo.</p>
-            <a href="#catalog" class="btn btn-primary">Ver Catálogo B2B</a>
-        </section>
+      <nav class="nav" aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="#ciencia">Ciencia</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#diagnostico">Diagnóstico</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
 
-        <!-- Sección 2: Catálogo -->
-        <section id="catalog">
-            <h2>Catálogo Dermatológico (Lotes)</h2>
-            
-            <div id="catalog-loading" class="empty-state">
-                <span class="spinner"></span>
-                <p>Cargando catálogo dermatológico...</p>
-            </div>
-
-            <div id="catalog-error" class="alert alert-error hidden"></div>
-            
-            <div id="catalog-empty" class="empty-state hidden">
-                <p>Actualmente no hay productos disponibles. Por favor, regresa más tarde.</p>
-            </div>
-
-            <div id="catalog-container" class="products-grid">
-            </div>
-        </section>
-
-        <!-- Sección 3: Formulario de Compra -->
-        <section id="order">
-            <h2>Completa tu Pedido</h2>
-            
-            <form id="order-form">
-                <div id="form-error" class="alert alert-error hidden"></div>
-                <div id="form-success" class="alert alert-success hidden"></div>
-
-                <div class="form-group">
-                    <label for="name">Nombre de la Empresa / Clínica</label>
-                    <input type="text" id="name" name="name" required minlength="3">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Correo Electrónico Corporativo</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Teléfono de Contacto</label>
-                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{7,15}" title="Solo números, entre 7 y 15 dígitos">
-                </div>
-
-                <div class="form-group">
-                    <label for="licenses">Número de Unidades Requeridas (Lotes)</label>
-                    <input type="number" id="licenses" name="licenses" required min="1" value="1">
-                </div>
-                
-                <div class="form-group">
-                    <label for="date">Fecha de Entrega Esperada</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="product">Producto Seleccionado</label>
-                    <select id="product" name="product" required>
-                        <option value="" disabled selected>-- Elige el producto mayorista --</option>
-                    </select>
-                </div>
-
-                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
-                    <button type="submit" class="btn btn-primary" style="flex: 1;">Procesar Pago Seguro</button>
-                    <button type="button" id="btn-cancel-order" class="btn btn-danger">Cancelar Pedido</button>
-                </div>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 La Roche-Posay B2B. Todos los derechos reservados. Proyecto Académico.</p>
-    </footer>
-
-    <!-- Modal de confirmación -->
-    <div id="confirmation-modal" class="modal-overlay">
-        <div class="modal-content">
-            <h3 style="margin-bottom: 1rem; font-family: var(--font-heading);">Confirmar Acción</h3>
-            <p id="modal-text" style="margin-bottom: 2rem; color: var(--text-muted);"></p>
-            <div class="modal-actions">
-                <button id="modal-cancel" class="btn">Volver</button>
-                <button id="modal-confirm" class="btn btn-danger">Sí, confirmar</button>
-            </div>
-        </div>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
-    <!-- JS -->
-    <script type="module" src="./js/main.js"></script>
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <ul>
+        <li><a href="#ciencia">Ciencia</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#diagnostico">Diagnóstico</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <span class="eyebrow">Dermatología · Desde 1975</span>
+          <h1 id="hero-title" class="hero__title">
+            Dermatología <em>respaldada</em><br/>por la ciencia.
+          </h1>
+          <p class="hero__lead">
+            Soluciones recomendadas por dermatólogos en todo el mundo. Formuladas con agua termal de La Roche-Posay y validadas por más de 50 años de investigación.
+          </p>
+          <div class="hero__actions">
+            <a href="#productos" class="btn btn--primary">Descubrir soluciones</a>
+            <a href="#diagnostico" class="btn btn--ghost">Solicitar diagnóstico</a>
+          </div>
+          <ul class="hero__meta" aria-label="Sellos de confianza">
+            <li><strong>90.000+</strong> dermatólogos</li>
+            <li><strong>60+</strong> países</li>
+            <li><strong>AA</strong> tolerancia clínica</li>
+          </ul>
+        </div>
+
+        <figure class="hero__media reveal" aria-hidden="false">
+          <img src="./assets/images/hero.svg" alt="Frasco minimalista de sérum dermatológico La Roche-Posay sobre fondo claro" width="640" height="720" />
+          <figcaption class="hero__caption">Active ingredient · Niacinamide 10%</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section id="ciencia" class="trust" aria-labelledby="trust-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Confianza científica</span>
+          <h2 id="trust-title">Décadas de investigación dermatológica.</h2>
+          <p>Cada fórmula nace en nuestros laboratorios y se prueba bajo control dermatológico, con tolerancia validada en pieles sensibles.</p>
+        </header>
+
+        <div class="stats">
+          <article class="stat reveal">
+            <svg class="stat__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            <p class="stat__number" data-count="50">0</p>
+            <p class="stat__label">Años de investigación dermatológica</p>
+          </article>
+          <article class="stat reveal">
+            <svg class="stat__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20c0-4 4-7 8-7s8 3 8 7M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+            <p class="stat__number" data-count="90000">0</p>
+            <p class="stat__label">Dermatólogos recomiendan la marca</p>
+          </article>
+          <article class="stat reveal">
+            <svg class="stat__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            <p class="stat__number" data-count="60">0</p>
+            <p class="stat__label">Países con presencia global</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="productos" class="products" aria-labelledby="products-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Líneas destacadas</span>
+          <h2 id="products-title">Cuatro rutinas, una sola promesa.</h2>
+          <p>Cada línea responde a una necesidad dermatológica específica, con eficacia clínicamente probada.</p>
+        </header>
+
+        <div id="product-grid" class="product-grid" aria-live="polite" aria-busy="true">
+          <!-- Skeleton placeholders -->
+          <div class="product-card skeleton" aria-hidden="true"></div>
+          <div class="product-card skeleton" aria-hidden="true"></div>
+          <div class="product-card skeleton" aria-hidden="true"></div>
+          <div class="product-card skeleton" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONSULTATION FORM -->
+    <section id="diagnostico" class="consult" aria-labelledby="consult-title">
+      <div class="container consult__grid">
+        <div class="consult__intro reveal">
+          <span class="eyebrow">Diagnóstico personalizado</span>
+          <h2 id="consult-title">Una rutina pensada para tu piel.</h2>
+          <p>Completa tu perfil dermatológico y nuestro equipo te enviará una recomendación profesional en menos de 48&nbsp;horas.</p>
+          <ul class="consult__bullets">
+            <li>Evaluación gratuita y confidencial</li>
+            <li>Recomendación basada en evidencia</li>
+            <li>Acompañamiento por dermatólogos certificados</li>
+          </ul>
+        </div>
+
+        <form id="consult-form" class="form reveal" novalidate aria-describedby="form-status">
+          <div class="field">
+            <label for="fullName">Nombre completo</label>
+            <input id="fullName" name="fullName" type="text" autocomplete="name" required placeholder="Ej. María Fernández" />
+            <p class="field__error" data-error-for="fullName"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com" />
+            <p class="field__error" data-error-for="email"></p>
+          </div>
+
+          <div class="field">
+            <label for="phone">Teléfono</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required placeholder="+57 300 000 0000" />
+            <p class="field__error" data-error-for="phone"></p>
+          </div>
+
+          <div class="field">
+            <label for="skinType">Tipo de piel</label>
+            <select id="skinType" name="skinType" required>
+              <option value="">Selecciona una opción</option>
+              <option value="seca">Seca</option>
+              <option value="mixta">Mixta</option>
+              <option value="grasa">Grasa</option>
+              <option value="sensible">Sensible</option>
+              <option value="madura">Madura</option>
+            </select>
+            <p class="field__error" data-error-for="skinType"></p>
+          </div>
+
+          <div class="field field--full">
+            <label for="need">Necesidad principal</label>
+            <textarea id="need" name="need" rows="3" required placeholder="Cuéntanos qué buscas: imperfecciones, hidratación, manchas, protección solar..."></textarea>
+            <p class="field__error" data-error-for="need"></p>
+          </div>
+
+          <div class="form__actions field--full">
+            <button type="submit" class="btn btn--primary" id="submit-btn">
+              <span class="btn__label">Enviar diagnóstico</span>
+              <span class="btn__spinner" aria-hidden="true"></span>
+            </button>
+            <p id="form-status" class="form__status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonios" class="testimonials" aria-labelledby="test-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Testimonios</span>
+          <h2 id="test-title">Confianza compartida en todo el mundo.</h2>
+        </header>
+        <div class="testimonial-grid">
+          <figure class="testimonial reveal">
+            <blockquote>"Después de años con dermatitis, Lipikar transformó mi piel. Es el único que tolero sin reacciones."</blockquote>
+            <figcaption><strong>Camila R.</strong><span>Dermatitis atópica</span></figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <blockquote>"Recomiendo Anthelios a todos mis pacientes. Protección solar de calidad médica, sin compromisos."</blockquote>
+            <figcaption><strong>Dra. Lina Mejía</strong><span>Dermatóloga · Bogotá</span></figcaption>
+          </figure>
+          <figure class="testimonial reveal">
+            <blockquote>"Effaclar Duo+ controló mis brotes en pocas semanas. Por fin una rutina que funciona."</blockquote>
+            <figcaption><strong>Andrés T.</strong><span>Piel acneica</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2 id="faq-title">Resolvemos tus dudas.</h2>
+        </header>
+
+        <div class="accordion">
+          <article class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>¿Los productos son aptos para piel sensible?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" hidden>
+              <p>Sí. Toda nuestra gama está formulada con agua termal de La Roche-Posay y testada bajo estricto control dermatológico para tolerancia óptima.</p>
+            </div>
+          </article>
+
+          <article class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>¿Cuánto tarda el diagnóstico personalizado?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" hidden>
+              <p>Recibirás una recomendación profesional dentro de las 48 horas siguientes al envío del formulario.</p>
+            </div>
+          </article>
+
+          <article class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>¿Dónde puedo comprar los productos?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" hidden>
+              <p>En farmacias seleccionadas y a través de nuestros distribuidores oficiales en más de 60 países.</p>
+            </div>
+          </article>
+
+          <article class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span>¿Realizan test en animales?</span>
+              <span class="accordion__icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion__panel" hidden>
+              <p>No. Cumplimos con la normativa europea y aplicamos métodos alternativos validados científicamente.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer__grid">
+      <div>
+        <p class="brand__name">LA ROCHE-POSAY</p>
+        <p class="footer__tag">Laboratoire Dermatologique · Dermatología respaldada por la ciencia.</p>
+      </div>
+      <nav aria-label="Enlaces de pie de página">
+        <h3>Marca</h3>
+        <ul>
+          <li><a href="#ciencia">Compromiso científico</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#diagnostico">Diagnóstico</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Soporte">
+        <h3>Soporte</h3>
+        <ul>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="mailto:contacto@laroche-posay.com">contacto@laroche-posay.com</a></li>
+          <li><a href="tel:+5713000000">+57 1 300 00 00</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3>Síguenos</h3>
+        <ul class="footer__social">
+          <li><a href="#" aria-label="Instagram">Instagram</a></li>
+          <li><a href="#" aria-label="YouTube">YouTube</a></li>
+          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <small>© <span id="year"></span> La Roche-Posay. Todos los derechos reservados.</small>
+      <small>Proyecto académico · Demo no comercial.</small>
+    </div>
+  </footer>
+
+  <div id="toast-stack" class="toast-stack" aria-live="polite" aria-atomic="true"></div>
+
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>
